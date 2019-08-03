@@ -3,6 +3,17 @@ function notHaveClass($elem, className) {
   return !$elem.hasClass(className);
 }
 
+// 检查元素是否包含指定关键字
+function hasKeyText(arr, key) {
+  let flag = false
+  arr.forEach((item) => {
+    if (item.indexOf(key) >= 0) {
+      flag = true
+    }
+  })
+  return flag
+}
+
 function closeDanmuBtn(selector, notDisabledStatusClassFunc) {
   var $closeBtn = $(selector);
   count += 1;
@@ -23,7 +34,7 @@ $(function() {
 
   if (window.location.host.indexOf('www.huya.com') !== -1) {
     console.log('huya')
-    // 关闭虎牙弹幕按钮
+    // 关闭虎牙弹幕
     closeDanmuBtn("#player-danmu-btn", function($elem) {
       if ($elem.hasClass("danmu-hide-btn")) {
         return false
@@ -43,5 +54,15 @@ $(function() {
     });
   }
 
+  if (window.location.host.indexOf('www.douyu.com') !== -1) {
+    console.log('douyu')
+    // 关闭斗鱼弹幕
+    closeDanmuBtn('div[title="关闭弹幕"]', function() {
+      if (!hasKeyText($('div[title="关闭弹幕"]').classList, 'removed')) {
+        return false
+      }
+      return true
+    });
+  }
+
 });
- 
