@@ -10,7 +10,11 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.huya.com/*", "https://www.bilibili.com/*", "https://www.douyu.com/*"],
+      "matches": [
+        "https://www.huya.com/*",
+        "https://www.bilibili.com/*",
+        "https://www.douyu.com/*"
+      ],
       "js": ["js/jquery.min.js", "js/page.js"],
       "run_at": "document_end"
     }

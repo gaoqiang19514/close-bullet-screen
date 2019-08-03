@@ -51,7 +51,7 @@ $(function() {
       return true
     });
   }
-  console.log('douyu')
+
   if (window.location.host.indexOf('www.douyu.com') !== -1) {
     console.log('douyu')
     // 关闭斗鱼弹幕
