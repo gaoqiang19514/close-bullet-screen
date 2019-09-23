@@ -26,10 +26,7 @@ function closeDanmuBtn(selector, notDisabledStatusClassFunc) {
   }
 }
 
-var TRY_COUNT = 100;
-var count = 0;
-$(function() {
-
+function init() {
   if (window.location.host.indexOf('www.huya.com') !== -1) {
     console.log('huya')
     // 关闭虎牙弹幕
@@ -62,5 +59,24 @@ $(function() {
       return true
     });
   }
+}
 
+/**
+ * 监听页面切换
+ */
+function listenPageChange() {
+  let key = history.state.key
+  window.addEventListener('click', function() {
+    if (history.state && (history.state.key !== key)) {
+      key = history.state.key
+      init()
+    }
+  }, false)
+}
+
+var TRY_COUNT = 100;
+var count = 0;
+$(function() {
+  init()
+  listenPageChange()
 });
