@@ -65,7 +65,7 @@ function init() {
  * 监听页面切换
  */
 function listenPageChange() {
-  let key = history.state.key
+  let key = history.state && history.state.key
   window.addEventListener('click', function() {
     if (history.state && (history.state.key !== key)) {
       key = history.state.key
