@@ -1,8 +1,8 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 3,
   "name": "my-chrome-plugins",
   "version": "1.0.0",
-  "description": "自动关闭网页中默认开启的弹幕",
+  "description": "我的chrome插件集",
   "icons": {
     "16": "img/icon.png",
     "48": "img/icon.png",
@@ -10,8 +10,8 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.huya.com/*", "https://www.bilibili.com/*"],
-      "js": ["js/jquery.min.js", "js/page.js"],
+      "matches": ["https://www.huya.com/*", "https://www.bilibili.com/*", "https://weibo.com/*"],
+      "js": ["js/jquery.min.js", "js/content.js"],
       "run_at": "document_end"
     }
   ]
