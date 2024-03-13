@@ -31,6 +31,7 @@ const insertTextarea = (text) => {
   if (!text) {
     throw new Error("写入值不能为空");
   }
+
   const textarea = document.querySelector("textarea");
   const inputEvent = new Event("input", { bubbles: true });
 
