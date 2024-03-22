@@ -8,6 +8,11 @@ const getNewestPost = () => {
   ).filter((_, item) => {
     const text = $(item).find(":first .wbpro-feed-ogText div").html();
     const arr = text.match(/[a-zA-Z]+|\d+/g);
+
+    if (!arr) {
+      return false;
+    }
+
     const [key1, key1Value, br, key2] = arr;
 
     return key1 === "f" && br === "br" && key2 === "dw";
