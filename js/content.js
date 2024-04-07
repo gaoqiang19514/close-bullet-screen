@@ -33,10 +33,6 @@ const getNewestPost = () => {
  * @param {string} text
  */
 const insertTextarea = (text) => {
-  if (!text) {
-    throw new Error("写入值不能为空");
-  }
-
   const textarea = document.querySelector("textarea");
   const inputEvent = new Event("input", { bubbles: true });
 
@@ -46,6 +42,11 @@ const insertTextarea = (text) => {
 
 $(function () {
   $(".woo-pop-wrap-main button").click(() => {
+    const text = getNewestPost();
+    if (!text) {
+      throw new Error("写入值不能为空");
+    }
+
     insertTextarea(getNewestPost());
   });
 });
