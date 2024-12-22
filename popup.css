@@ -1,0 +1,28 @@
+.container {
+  width: 300px;
+  padding: 15px;
+}
+
+.blacklist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.add-form {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+input {
+  flex: 1;
+  padding: 5px;
+}
