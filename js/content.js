@@ -7,6 +7,11 @@ const getNewestPost = () => {
     ".vue-recycle-scroller__item-wrapper .vue-recycle-scroller__item-view"
   ).filter((_, item) => {
     const text = $(item).find(":first .wbpro-feed-ogText div").html();
+
+    if (!text) {
+      return false;
+    }
+
     const arr = text.match(/[a-zA-Z]+|\d+/g);
 
     if (!arr) {
@@ -20,6 +25,11 @@ const getNewestPost = () => {
 
   const [firstPunchInPost] = punchInPosts;
   const text = $(firstPunchInPost).find(":first .wbpro-feed-ogText div").html();
+
+  if (!text) {
+    return "";
+  }
+
   const arr = text.match(/[a-zA-Z]+|\d+/g);
   const [key1, key1Value, _, key2, key2Value, key2Target] = arr;
 
